@@ -2,6 +2,7 @@
 import csv
 
 # Question 1
+```python
 def getLargestGDPIncrease(filename):
     with open(filename, newline = '') as csvfile:
         reader = csv.DictReader(csvfile)
@@ -24,12 +25,12 @@ def calculateGDPDifference(row, dict):
     elif (year == "2025"):
         dict[country] += float(row['GDP (in billion USD)'])
     return dict
-
+```
 answer = getLargestGDPIncrease('/Users/moonjiung/Desktop/cse 8a code/Economic Indicators And Inflation.csv')
 print(answer)
 
 # Question 2
-
+```python
 def getInflationUnemploymentCorrelation(filename):
     with open(filename, newline = '') as csvfile:
         reader = csv.DictReader(csvfile)
@@ -52,11 +53,12 @@ def getInflationUnemploymentCorrelation(filename):
             prev_inflation = inflation
             prev_unemployment = unemployment
     return hasCorrelation
-
+```
 answer2 = getInflationUnemploymentCorrelation('/Users/moonjiung/Desktop/cse 8a code/Economic Indicators And Inflation.csv')
 print(answer2)
 
 # Question 3
+```python
 def getCountryWithTheMostInflation(filename):
     with open(filename, newline = '') as csvfile:
         reader = csv.DictReader(csvfile)
@@ -72,7 +74,7 @@ def getCountryWithTheMostInflation(filename):
             #Inflation is considered as high inflation if it is over than 5.0
             if (inflationRate) > 5.0:
                 dict[country] += 1
-
+```
     return max(dict, key=dict.get)
 
 answer3 = getCountryWithTheMostInflation('/Users/moonjiung/Desktop/cse 8a code/Economic Indicators And Inflation.csv')
